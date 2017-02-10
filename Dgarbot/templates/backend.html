@@ -1,0 +1,63 @@
+<html>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<body>
+<p><h1>User List</h1></p>
+
+<table style="width:100%">
+  <tr>
+    <th>User</th>
+    <th>State</th> 
+    <th>City</th>
+    <th>Address</th>
+    <th>Week</th>
+    <th>Day</th>
+    <th>Reminder</th>
+    <th>Confusion</th>
+    <th>Thread</th>
+    <th>Level</th>
+    <th>Reminder Time</th>
+  </tr>
+
+    {% for user in users %}
+    <tr>
+    	<th>{{ user[0] }}</th>
+      <th>{{ user[1] }}</th>
+      <th>{{ user[2] }}</th>
+      <th>{{ user[3] }}</th>
+      <th>{{ user[4] }}</th>
+      <th>{{ user[5] }}</th>
+      <th>{{ user[6] }}</th>
+      <th>{{ user[7] }}</th>
+      <th>{{ user[8] }}</th>
+      <th>{{ user[9] }}</th>
+      <th>{{ user[10] }}</th>
+	</tr>
+    {% endfor %}
+</table>
+
+<br>
+<h1>Log output</h1>
+<br>
+<table style="width:100%">
+  <tr>
+    <th>Type</th>
+    <th>Timestamp</th>
+    <th>User</th>
+    <th>Message</th>
+  </tr>
+  {% for entry in log %}
+  <tr>
+    <th>{{ entry[0] }}</th>
+    <th>{{ entry[1] }}</th>
+    <th>{{ entry[2] }}</th>
+    <th>{{ entry[3] }}</th>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
